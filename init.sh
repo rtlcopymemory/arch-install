@@ -125,3 +125,16 @@ wget https://raw.githubusercontent.com/WolfenCLI/alacritty-dotfiles/master/alacr
 mkdir "$HOME/.config/nvim"
 wget https://raw.githubusercontent.com/WolfenCLI/neovim-dotfiles/master/init.vim -O "$HOME/.config/nvim/init.vim"
 
+# .profile, .tmux.conf
+wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/.profile -O "$HOME/.profile"
+wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/.tmux.conf -O "$HOME/.tmux.conf"
+
+# My own custom scripts
+mkdir -p "$HOME/.local/scripts"
+mkdir -p "$HOME/.local/bin"
+wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/sync-pull -O "$HOME/.local/scripts/sync-pull.sh"
+wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/sync-push -O "$HOME/.local/scripts/sync-push.sh"
+chmod 700 "$HOME/.local/scripts/*.sh"
+ln -s "$HOME/.local/scripts/sync-pull.sh" "$HOME/.local/bin/"
+ln -s "$HOME/.local/scripts/sync-push.sh" "$HOME/.local/bin/"
+
