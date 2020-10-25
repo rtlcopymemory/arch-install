@@ -43,15 +43,6 @@ install_desktop()
     source /tmp/"$DESKTOP".sh
 }
 
-# Installing the base packages needed and creating the fstab file
-pacstrap /mnt base base-devel linux linux-headers linux-firmware
-genfstab -U /mnt >> /mnt/etc/fstab
-
-# Chrooting and enabling the network manager for later
-arch-chroot /mnt
-pacman -S networkmanager
-systemctl enable NetworkManager
-
 # Europe/Rome timezone
 ln -sf /usr/share/zoneinfo/"$TIMEZONE" /etc/localtime
 hwclock --systohc
