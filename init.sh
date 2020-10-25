@@ -97,7 +97,8 @@ passwd "$USERNAME"
 # SUDO configuration
 nvim +/%wheel /etc/sudoers
 
-# Activating Display manager
+# Activating Display manager and NetworkManager
+systemctl enable NetworkManager
 systemctl enable lightdm
 
 # install Desktop
