@@ -47,7 +47,7 @@ install_desktop()
 ln -sf /usr/share/zoneinfo/"$TIMEZONE" /etc/localtime
 hwclock --systohc
 
-pacman -S neovim
+pacman -S --noconfirm neovim
 # opens neovim at the us locale line
 nvim +/#"$LOCALE".UTF-8 /etc/locale.gen
 
