@@ -27,6 +27,8 @@ VIDEO_DRIVERS="xf86-video-amdgpu mesa" # AMD gpus
 # VIDEO_DRIVERS="virtualbox-guest-utils xf86-video-vmware" # Virtualbox
 # VIDEO_DRIVERS="nvidia-utils" # NVidia
 
+########## END VARIABLES #############
+
 install_packages()
 {
     # Making sure wget is already installed
