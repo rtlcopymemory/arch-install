@@ -2,7 +2,7 @@
 My personal scripts to install and configure arch
 
 # How to use
-after partitioning your disk and mounting the needed partitions to `/mnt` run:
+after partitioning your disk, mounting the needed partitions to `/mnt` and `arch-chroot` into it run:
 ```sh
 pacman -S wget
 wget https://raw.githubusercontent.com/WolfenCLI/arch-install/master/init.sh
