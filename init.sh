@@ -150,3 +150,6 @@ chmod 700 "$HOME/.local/scripts/sync-push.sh"
 ln -s "$HOME/.local/scripts/sync-pull.sh" "$HOME/.local/bin/"
 ln -s "$HOME/.local/scripts/sync-push.sh" "$HOME/.local/bin/"
 
+# Adds picom to .profile
+echo "picom -b &" >> "$HOME/.profile"
+
