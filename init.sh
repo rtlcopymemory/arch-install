@@ -122,5 +122,6 @@ mkdir "$HOME/.config/alacritty"
 wget https://raw.githubusercontent.com/WolfenCLI/alacritty-dotfiles/master/alacritty.yml -O "$HOME/.config/alacritty/alacritty.yml"
 
 # Neovim
-
+mkdir "$HOME/.config/nvim"
+wget https://raw.githubusercontent.com/WolfenCLI/neovim-dotfiles/master/init.vim -O "$HOME/.config/nvim/init.vim"
 
