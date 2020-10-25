@@ -5,6 +5,8 @@ git clone https://github.com/WolfenCLI/dwm.git /tmp/dwm
 cd /tmp/dwm/
 make
 make install
+
+mkdir -p /usr/share/xsessions/
 cat << EOF > /usr/share/xsessions/dwm.desktop
 [Desktop Entry]
 Encoding=UTF-8
