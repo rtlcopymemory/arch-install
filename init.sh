@@ -104,3 +104,16 @@ systemctl enable lightdm
 # install Desktop
 install_desktop
 
+##### DOTFILES
+su "$USERNAME"
+cd "$HOME"
+
+# ZSH
+sudo pacman -S --noconfirm zsh curl git powerline-fonts zsh-autosuggestions
+read -s "After the oh-my-zsh prompt appears, press ctrl-D to continue"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Oh-my-zsh theming
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+wget -O "$HOME"/.zshrc https://raw.githubusercontent.com/WolfenCLI/zsh-dotfiles/master/.zshrc
+
