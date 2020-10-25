@@ -17,3 +17,4 @@ Icom=dwm
 Type=XSession
 EOF
 
+pacman -S --noconfirm alacritty dmenu
