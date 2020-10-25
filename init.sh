@@ -104,6 +104,16 @@ systemctl enable lightdm
 # install Desktop
 install_desktop
 
+# Touchpad config
+cat << EOF > /etc/X11/xorg.conf.d/70-touchpad-settings.conf
+Section "InputClass"
+    Identifier                   "Touchpads"
+    MatchIsTouchpad              "on"
+    Option    "Tapping"          "on"
+    Option    "NaturalScrolling" "true"
+EndSection
+EOF
+
 ##### DOTFILES
 su "$USERNAME"
 cd "$HOME"
