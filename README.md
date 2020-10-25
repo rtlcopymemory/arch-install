@@ -8,4 +8,5 @@ pacman -S wget
 wget https://raw.githubusercontent.com/WolfenCLI/arch-install/master/init.sh
 # Make the changes
 sh ./init.sh
+rm /init.sh
 ```
