@@ -154,6 +154,6 @@ echo "picom -b" >> "$USER_HOME/.profile"
 
 # Adds feh for the background
 mkdir -p "$USER_HOME/Pictures"
-wget "${GITHUB_BASE}/background.png" -O "$USER_HOME/Pictures"
+wget "${GITHUB_BASE}/background.png" -O "$USER_HOME/Pictures/background.png"
 echo "feh --bg-scale ~/Pictures/background.png &" >> "$USER_HOME/.profile"
 
