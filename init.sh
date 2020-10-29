@@ -122,7 +122,7 @@ cat << EOF > /setup.sh
 # ZSH
 sudo pacman -S --noconfirm zsh curl git powerline-fonts zsh-autosuggestions
 read -s "After the oh-my-zsh prompt appears, press ctrl-D to continue"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Oh-my-zsh theming
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
