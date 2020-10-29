@@ -118,10 +118,11 @@ EOF
 # In this session, to use the variables from the user you need
 # to use sh -c="command" - "${USERNAME}"
 # To make it easier to write, I've dumped it into a file
-cat << EOF > /setup.sh
+su - ${USERNAME} << EOF
 # ZSH
 sudo pacman -S --noconfirm zsh curl git powerline-fonts zsh-autosuggestions
-read -s "After the oh-my-zsh prompt appears, press ctrl-D to continue"
+echo "After the oh-my-zsh prompt appears, press ctrl-D to continue"
+read 
 sh -c "\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Oh-my-zsh theming
@@ -156,10 +157,7 @@ echo "picom -b" >> "\$HOME/.profile"
 
 # Adds feh for the background
 mkdir -p "\$HOME/Pictures"
-wget "\${GITHUB_BASE}/background.png" -O "\$HOME/Pictures/background.png"
+wget "${GITHUB_BASE}/background.png" -O "\$HOME/Pictures/background.png"
 echo "feh --bg-scale ~/Pictures/background.png &" >> "\$HOME/.profile"
 EOF
-
-chmod +rx /setup.sh
-sh -c "sh /setup.sh" - ${USERNAME}
 
