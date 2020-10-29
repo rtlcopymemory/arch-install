@@ -121,8 +121,6 @@ EOF
 su - ${USERNAME} << EOF
 # ZSH
 sudo pacman -S --noconfirm zsh curl git powerline-fonts zsh-autosuggestions
-echo "After the oh-my-zsh prompt appears, press ctrl-D to continue"
-read 
 sh -c "\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Oh-my-zsh theming
