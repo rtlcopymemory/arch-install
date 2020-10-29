@@ -125,41 +125,41 @@ read -s "After the oh-my-zsh prompt appears, press ctrl-D to continue"
 sh -c "\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Oh-my-zsh theming
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-wget -O "$HOME"/.zshrc https://raw.githubusercontent.com/WolfenCLI/zsh-dotfiles/master/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \${ZSH_CUSTOM:-\$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions \${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+wget -O "\$HOME"/.zshrc https://raw.githubusercontent.com/WolfenCLI/zsh-dotfiles/master/.zshrc
 
 # Alacritty
-mkdir "$HOME/.config/alacritty"
-wget https://raw.githubusercontent.com/WolfenCLI/alacritty-dotfiles/master/alacritty.yml -O "$HOME/.config/alacritty/alacritty.yml"
+mkdir "\$HOME/.config/alacritty"
+wget https://raw.githubusercontent.com/WolfenCLI/alacritty-dotfiles/master/alacritty.yml -O "\$HOME/.config/alacritty/alacritty.yml"
 
 # Neovim
-mkdir "$HOME/.config/nvim"
-wget https://raw.githubusercontent.com/WolfenCLI/neovim-dotfiles/master/init.vim -O "$HOME/.config/nvim/init.vim"
+mkdir "\$HOME/.config/nvim"
+wget https://raw.githubusercontent.com/WolfenCLI/neovim-dotfiles/master/init.vim -O "\$HOME/.config/nvim/init.vim"
 
 # .profile, .tmux.conf
-wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/.profile -O "$HOME/.profile"
-wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/.tmux.conf -O "$HOME/.tmux.conf"
+wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/.profile -O "\$HOME/.profile"
+wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/.tmux.conf -O "\$HOME/.tmux.conf"
 
 # My own custom scripts
-mkdir -p "$HOME/.local/scripts"
-mkdir -p "$HOME/.local/bin"
-wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/sync-pull -O "$HOME/.local/scripts/sync-pull.sh"
-wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/sync-push -O "$HOME/.local/scripts/sync-push.sh"
-chmod 700 "$HOME/.local/scripts/sync-pull.sh"
-chmod 700 "$HOME/.local/scripts/sync-push.sh"
-ln -s "$HOME/.local/scripts/sync-pull.sh" "$HOME/.local/bin/"
-ln -s "$HOME/.local/scripts/sync-push.sh" "$HOME/.local/bin/"
+mkdir -p "\$HOME/.local/scripts"
+mkdir -p "\$HOME/.local/bin"
+wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/sync-pull -O "\$HOME/.local/scripts/sync-pull.sh"
+wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/sync-push -O "\$HOME/.local/scripts/sync-push.sh"
+chmod 700 "\$HOME/.local/scripts/sync-pull.sh"
+chmod 700 "\$HOME/.local/scripts/sync-push.sh"
+ln -s "\$HOME/.local/scripts/sync-pull.sh" "\$HOME/.local/bin/"
+ln -s "\$HOME/.local/scripts/sync-push.sh" "\$HOME/.local/bin/"
 
 # Adds picom to .profile
-echo "picom -b" >> "$HOME/.profile"
+echo "picom -b" >> "\$HOME/.profile"
 
 # Adds feh for the background
-mkdir -p "$HOME/Pictures"
-wget "${GITHUB_BASE}/background.png" -O "$HOME/Pictures/background.png"
-echo "feh --bg-scale ~/Pictures/background.png &" >> "$HOME/.profile"
+mkdir -p "\$HOME/Pictures"
+wget "\${GITHUB_BASE}/background.png" -O "\$HOME/Pictures/background.png"
+echo "feh --bg-scale ~/Pictures/background.png &" >> "\$HOME/.profile"
 EOF
 
 chmod +rx /setup.sh
-sh -c="sh /setup.sh" - ${USERNAME}
+sh -c "sh /setup.sh" - ${USERNAME}
 
