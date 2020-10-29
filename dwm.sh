@@ -6,6 +6,12 @@ cd /tmp/dwm/
 make
 make install
 
+# Dmenu is also needed
+git clone https://git.suckless.org/dmenu /tmp/dmenu
+cd /tmp/dmenu
+make
+make install
+
 mkdir -p /usr/share/xsessions/
 cat << EOF > /usr/share/xsessions/dwm.desktop
 [Desktop Entry]
