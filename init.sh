@@ -9,7 +9,7 @@ DESKTOP="dwm"
 
 TIMEZONE="Europe/Rome"
 LOCALE="en_US"
-HOSTNAME="wolfencli"
+HOSTNAME="wolfen"
 STATIC_IP="192.168.0.105"
 DOMAIN="wolfen"
 
