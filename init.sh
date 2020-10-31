@@ -180,15 +180,20 @@ volume() {
 bardate() {
     echo "\$(date +"%a %b %d %Y %I:%M")"
 }
- 
+
+wifiname() {
+    echo "\$(iwgetid -r)"
+}
+
 while [ True ]; do
         # display battery percentage
         # comment if using on Desktop
         bat=\$(battery)
         vol=\$(volume)
         mydate=\$(bardate)
+        wifi=\$(wifiname)
  
-        xsetroot -name " \$mydate |  \$vol |  \$bat"
+        xsetroot -name " \$mydate |  \$vol |  \$wifi |  \$bat"
         sleep 1
 done &
 EOF2
