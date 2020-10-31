@@ -190,7 +190,7 @@ while [ True ]; do
         mydate=\\\$(bardate)
         wifi=\\\$(wifiname)
  
-        xsetroot -name " \\\$mydate |  \\\$vol |  \\\$wifi |  \\\$bat"
+        xsetroot -name "  \\\$mydate |  \\\$vol |  \\\$wifi |  \\\$bat "
         sleep 1
 done &
 EOF2
