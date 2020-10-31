@@ -151,11 +151,11 @@ ln -s "\$HOME/.local/scripts/sync-pull.sh" "\$HOME/.local/bin/"
 ln -s "\$HOME/.local/scripts/sync-push.sh" "\$HOME/.local/bin/"
 
 # Adds picom to .profile
-echo "picom -b" >> "\$HOME/.profile"
+echo "picom -b" >> "\$HOME/.xprofile"
 
 # Adds feh for the background
 mkdir -p "\$HOME/Pictures"
 wget "${GITHUB_BASE}/background.png" -O "\$HOME/Pictures/background.png"
-echo "feh --bg-scale ~/Pictures/background.png &" >> "\$HOME/.profile"
+echo "feh --bg-scale ~/Pictures/background.png &" >> "\$HOME/.xprofile"
 EOF
 
