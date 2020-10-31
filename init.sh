@@ -160,40 +160,37 @@ echo "feh --bg-scale ~/Pictures/background.png &" >> "\$HOME/.xprofile"
 
 # dwm bar
 cat << EOF2 >> "\$HOME/.xprofile"
-
-picom -b
-feh --bg-scale ~/Pictures/background.png &
  
 # dwm bar
  
 battery() {
     # Gets the stats from /sys/class/power_supply/BAT0
     # Change the path according to your config
-    local result="\$(cat /sys/class/power_supply/BAT1/capacity)"
-    echo "\$result %"
+    local result="\\\$(cat /sys/class/power_supply/BAT1/capacity)"
+    echo "\\\$result %"
 }
 
 volume() {
-    echo "\$(amixer sget Master | grep Left | awk -F"[][]" '/dB/ { print \$2 }')"
+    echo "\\\$(amixer sget Master | grep Left | awk -F"[][]" '/dB/ { print \\\$2 }')"
 }
 
 bardate() {
-    echo "\$(date +"%a %b %d %Y %I:%M")"
+    echo "\\\$(date +"%a %b %d %Y %I:%M")"
 }
 
 wifiname() {
-    echo "\$(iwgetid -r)"
+    echo "\\\$(iwgetid -r)"
 }
 
 while [ True ]; do
         # display battery percentage
         # comment if using on Desktop
-        bat=\$(battery)
-        vol=\$(volume)
-        mydate=\$(bardate)
-        wifi=\$(wifiname)
+        bat=\\\$(battery)
+        vol=\\\$(volume)
+        mydate=\\\$(bardate)
+        wifi=\\\$(wifiname)
  
-        xsetroot -name " \$mydate |  \$vol |  \$wifi |  \$bat"
+        xsetroot -name " \\\$mydate |  \\\$vol |  \\\$wifi |  \\\$bat"
         sleep 1
 done &
 EOF2
