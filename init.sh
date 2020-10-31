@@ -157,5 +157,29 @@ echo "picom -b" >> "\$HOME/.xprofile"
 mkdir -p "\$HOME/Pictures"
 wget "${GITHUB_BASE}/background.png" -O "\$HOME/Pictures/background.png"
 echo "feh --bg-scale ~/Pictures/background.png &" >> "\$HOME/.xprofile"
+
+# dwm bar
+cat << EOF2 >> "\$HOME/.xprofile"
+
+picom -b
+feh --bg-scale ~/Pictures/background.png &
+ 
+# dwm bar
+ 
+battery() {
+        # Gets the stats from /sys/class/power_supply/BAT0
+        # Change the path according to your config
+        local result="\$(cat /sys/class/power_supply/BAT1/capacity)"
+        echo "\$result %"
+}
+ 
+while [ True ]; do
+        # display battery percentage
+        # comment if using on Desktop
+        bat=\$(battery)
+ 
+        xsetroot -name "|  $bat"
+done &
+EOF2
 EOF
 
