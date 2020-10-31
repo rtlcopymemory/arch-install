@@ -167,18 +167,29 @@ feh --bg-scale ~/Pictures/background.png &
 # dwm bar
  
 battery() {
-        # Gets the stats from /sys/class/power_supply/BAT0
-        # Change the path according to your config
-        local result="\$(cat /sys/class/power_supply/BAT1/capacity)"
-        echo "\$result %"
+    # Gets the stats from /sys/class/power_supply/BAT0
+    # Change the path according to your config
+    local result="\$(cat /sys/class/power_supply/BAT1/capacity)"
+    echo "\$result %"
+}
+
+volume() {
+    echo "\$(amixer sget Master | grep Left | awk -F"[][]" '/dB/ { print \$2 }')"
+}
+
+bardate() {
+    echo "\$(date +"%a %b %d %Y %I:%M")"
 }
  
 while [ True ]; do
         # display battery percentage
         # comment if using on Desktop
         bat=\$(battery)
+        vol=\$(volume)
+        mydate=\$(bardate)
  
-        xsetroot -name "|  $bat"
+        xsetroot -name " \$mydate |  \$vol |  \$bat"
+        sleep 1
 done &
 EOF2
 EOF
