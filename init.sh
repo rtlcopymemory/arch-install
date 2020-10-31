@@ -115,9 +115,7 @@ EndSection
 EOF
 
 ##### DOTFILES
-# In this session, to use the variables from the user you need
-# to use sh -c="command" - "${USERNAME}"
-# To make it easier to write, I've dumped it into a file
+# Using an heredoc to execute commands as the interested user
 su - ${USERNAME} << EOF
 # ZSH
 sudo pacman -S --noconfirm zsh curl git powerline-fonts zsh-autosuggestions
@@ -175,7 +173,7 @@ volume() {
 }
 
 bardate() {
-    echo "\\\$(date +"%a %b %d %Y %I:%M")"
+    echo "\\\$(date +"%a %b %d %Y %I:%M %p")"
 }
 
 wifiname() {
