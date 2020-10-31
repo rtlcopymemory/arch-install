@@ -129,11 +129,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions \${ZSH_CUSTOM:-~/.oh-
 wget -O "\$HOME"/.zshrc https://raw.githubusercontent.com/WolfenCLI/zsh-dotfiles/master/.zshrc
 
 # Alacritty
-mkdir "\$HOME/.config/alacritty"
+mkdir -p "\$HOME/.config/alacritty"
 wget https://raw.githubusercontent.com/WolfenCLI/alacritty-dotfiles/master/alacritty.yml -O "\$HOME/.config/alacritty/alacritty.yml"
 
 # Neovim
-mkdir "\$HOME/.config/nvim"
+mkdir -p "\$HOME/.config/nvim"
 wget https://raw.githubusercontent.com/WolfenCLI/neovim-dotfiles/master/init.vim -O "\$HOME/.config/nvim/init.vim"
 
 # .profile, .tmux.conf
@@ -147,8 +147,8 @@ wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/sync-pull 
 wget https://raw.githubusercontent.com/WolfenCLI/Personal-Wiki/master/sync-push -O "\$HOME/.local/scripts/sync-push.sh"
 chmod 700 "\$HOME/.local/scripts/sync-pull.sh"
 chmod 700 "\$HOME/.local/scripts/sync-push.sh"
-ln -s "\$HOME/.local/scripts/sync-pull.sh" "\$HOME/.local/bin/"
-ln -s "\$HOME/.local/scripts/sync-push.sh" "\$HOME/.local/bin/"
+ln -s "\$HOME/.local/scripts/sync-pull.sh" "\$HOME/.local/bin/sync-pull"
+ln -s "\$HOME/.local/scripts/sync-push.sh" "\$HOME/.local/bin/sync-push"
 
 # Adds picom to .profile
 echo "picom -b" >> "\$HOME/.xprofile"
