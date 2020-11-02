@@ -114,6 +114,13 @@ Section "InputClass"
 EndSection
 EOF
 
+# Installs yay
+cd /tmp
+sudo git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd /
+
 ##### DOTFILES
 # Using an heredoc to execute commands as the interested user
 su - ${USERNAME} << EOF
